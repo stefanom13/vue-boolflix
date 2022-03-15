@@ -26,9 +26,10 @@ export default {
   },
   methods:{
     getUrl(string){
-      axios.get(` https://api.themoviedb.org/3/search/movie/550?api_key=72a92ebe1723db6f134bc8b280196055S&query=${string}&language=it_IT`)
+      axios.get(` https://api.themoviedb.org/3/search/movie?api_key=9857cfb37fc41b760e69c70f6d75b517&query=${string}&language=it_IT`)
       .then((risposta)=>{
         this.filmList = risposta.data.results;
+       
       });
     },
     getValueSelected(value){
