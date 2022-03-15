@@ -3,6 +3,7 @@
     <header class="headerSearch">
       <div class="container">
         <figure>
+          <h1>Boolflix</h1>
         </figure>
         <input type="text" v-model="value" placeholder="cerca qui...">
         <button @click="getValue">Search</button>
@@ -40,7 +41,9 @@ export default {
   min-height:100px;
 
   .container{
-    
+      h1{
+        text-align:center;
+      }
     input{
       width:300px;
       border:2px solid red;
