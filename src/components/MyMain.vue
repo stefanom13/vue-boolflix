@@ -3,10 +3,11 @@
       <div class="listFind">
           <ul>
               <li v-for="film in filmList" :key="film.id">
-                  {{film.title}}
-                  {{film.original_title}}
-                  {{film.original_language}}
-                  {{film.vote_average}}
+                  <h3>Film</h3>
+                  <p>Titolo:{{film.title}}</p>
+                  <p>Titolo originale: {{film.original_title}}</p>
+                  <p>Lingua originale: {{film.original_language}}</p>
+                  <p>Voto: {{film.vote_average}}</p>
 
               </li>
           </ul>
@@ -23,20 +24,25 @@ export default {
 </script>
 
 <style  scoped lang="scss">
-.sectionFilm{
-    height:100vh;
-    background-color:lightgreen;
 
     .listFind{
         max-width:1000px;
         padding:10px;
         margin: 0 auto;
         border: 1px solid black;
-        display:flex;
-        align-items: center;
-        justify-content: center;
 
+        ul {
+
+            li{
+                padding:10px;
+            }
+            
+        }
+
+        
+
+       
     }
-}
+
 
 </style>

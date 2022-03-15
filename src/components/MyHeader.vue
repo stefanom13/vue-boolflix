@@ -2,6 +2,8 @@
   <div class="hello">
     <header class="headerSearch">
       <div class="container">
+        <figure>
+        </figure>
         <input type="text" v-model="value" placeholder="cerca qui...">
         <button @click="getValue">Search</button>
       </div>
