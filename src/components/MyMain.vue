@@ -1,13 +1,23 @@
 <template>
   <section class="sectionFilm">
       <div class="listFind">
-          
+          <ul>
+              <li v-for="film in filmList" :key="film.id">
+                  {{film.title}}
+                  {{film.original_title}}
+                  {{film.original_language}}
+                  {{film.vote_average}}
+
+              </li>
+          </ul>
       </div>
   </section>
 </template>
 
 <script>
 export default {
+    name: "MyMain",
+    props : ["filmList"],
 
 }
 </script>

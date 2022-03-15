@@ -2,8 +2,8 @@
   <div class="hello">
     <header class="headerSearch">
       <div class="container">
-        <input type="text">
-        <button>Search</button>
+        <input type="text" v-model="value" placeholder="cerca qui...">
+        <button @click="getValue">Search</button>
       </div>
     </header>
   </div>
@@ -11,7 +11,18 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name:'MyHeader',
+  data(){
+    return {
+      value:"",
+    }
+  },
+  methods: {
+    getValue(){
+      this.$emit("getEmettiValore",this.value);
+    }
+  }
+  
   
 }
 </script>
@@ -30,7 +41,7 @@ export default {
     
     input{
       width:300px;
-      border:3px solid red;
+      border:2px solid red;
      
     }
   }
