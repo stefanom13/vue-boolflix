@@ -32,9 +32,12 @@ export default {
         border: 1px solid black;
 
         ul {
+            display:flex;
+            flex-wrap: wrap;
 
             li{
                 padding:10px;
+                max-width: 200px;
             }
             
         }
