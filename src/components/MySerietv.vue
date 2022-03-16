@@ -2,13 +2,12 @@
   <section class="sectionFilm">
       <div class="listFind">
           <ul>
-              <li v-for="film in filmList" :key="film.id">
-                  <h3>Film</h3>
-                  <p>Titolo:{{film.title}}</p>
-                  <p>Titolo originale: {{film.original_title}}</p>
-                  <p>Lingua originale: {{film.original_language}}</p>
-                  <p>Voto: {{film.vote_average}}</p>
-
+              <li v-for="serie in serieTv" :key="serie.id">
+                  <h3>Serie Tv</h3>
+                  <p>Titolo:{{serie.name}}</p>
+                  <p>Titolo originale: {{serie.original_title}}</p>
+                  <p>Lingua originale: {{serie.original_language}}</p>
+                  <p>Voto: {{serie.vote_average}}</p>
               </li>
           </ul>
       </div>
@@ -17,8 +16,8 @@
 
 <script>
 export default {
-    name: "MyMain",
-    props : ["filmList"],
+    name: "MySerietv",
+    props : ["serieTv"],
 
 }
 </script>
@@ -34,17 +33,17 @@ export default {
         ul {
             display:flex;
             flex-wrap: wrap;
+            align-items: center;
+            gap:8px;
 
             li{
                 padding:10px;
-                max-width: 200px;
+                max-width: 100%;
+                
             }
             
         }
 
-        
-
-       
     }
 
 

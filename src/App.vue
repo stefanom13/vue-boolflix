@@ -1,13 +1,15 @@
 <template>
   <div id="app">
     <MyHeader @getEmettiValore="getValueSelected"/>
-    <MyMain :filmList="filmList"/>
+    <MyFilm :filmList="filmList"/>
+    <MySerietv :serieTv="serieTv"/>
   </div>
 </template>
 
 <script>
 import MyHeader from './components/MyHeader.vue'
-import MyMain from './components/MyMain.vue'
+import MyFilm from './components/MyFilm.vue'
+import MySerietv from './components/MySerietv.vue'
 
 import axios from 'axios'
 
@@ -16,16 +18,25 @@ export default {
   name: 'App',
   components: {
     MyHeader,
-    MyMain
+    MyFilm,
+    MySerietv
   },
   data() {
     return {
       filmList: [],
       searchFilm:"",
+      serieTv: [],
     }
   },
   methods:{
-    getUrl(string){
+     getSerieTv(string){
+      axios.get(` https://api.themoviedb.org/3/search/tv?api_key=9857cfb37fc41b760e69c70f6d75b517&query=${string}&language=it_IT`)
+      .then((risposta)=>{
+        this.serieTv = risposta.data.results;
+       
+      });
+    },
+    getFilmUrl(string){
       axios.get(` https://api.themoviedb.org/3/search/movie?api_key=9857cfb37fc41b760e69c70f6d75b517&query=${string}&language=it_IT`)
       .then((risposta)=>{
         this.filmList = risposta.data.results;
@@ -34,8 +45,11 @@ export default {
     },
     getValueSelected(value){
       this.searchFilm = value;
-      this.getUrl(this.searchFilm);
-    }
+      this.getFilmUrl(this.searchFilm);
+      this.serieTv = value;
+      this.getSerieTv(this.serieTv)
+    },
+
   }
 }
 </script>
