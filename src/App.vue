@@ -11,7 +11,9 @@ import MyHeader from './components/MyHeader.vue'
 import MyFilm from './components/MyFilm.vue'
 import MySerietv from './components/MySerietv.vue'
 
+
 import axios from 'axios'
+
 
 
 export default {
@@ -50,7 +52,8 @@ export default {
       this.getSerieTv(this.serieTv)
     },
 
-  }
+
+  },
 }
 </script>
 
@@ -69,6 +72,7 @@ ul{
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(88, 88, 88);
   
 
 }
