@@ -7,8 +7,12 @@
       <div class="container CardFilm">
 
        <MyCard v-for="movie in movies" :key="movie.id" :element="movie"/>
+        
+      </div>
+
+      <div class="container CardFilm">
         <p>serietv</p>
-       <MyCard v-for="serie in series" :key="serie.id" :element="serie"/>
+          <MyCard v-for="serie in series" :key="serie.id" :element="serie"/>
       </div>
      
     </main>
