@@ -3,16 +3,15 @@
   <div id="app">
 
     <MyHeader/>
-    <main>
+    <main class="containerCard">
       <div class="container CardFilm">
-
        <MyCard v-for="movie in movies" :key="movie.id" :element="movie"/>
-        
       </div>
 
+      <h2>serietv</h2>
+
       <div class="container CardFilm">
-        <p>serietv</p>
-          <MyCard v-for="serie in series" :key="serie.id" :element="serie"/>
+        <MyCard v-for="serie in series" :key="serie.id" :element="serie"/>
       </div>
      
     </main>
@@ -26,7 +25,7 @@
 // import { hasFlag } from 'country-flag-icons'
 import MyCard from "./components/MyCard.vue"
 import MyHeader from "./components/MyHeader.vue"
-
+// import { library } from '@fortawesome/fontawesome-svg-core'
 import state from "./store.js"
 
 
@@ -71,5 +70,10 @@ export default {
   display:grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 15px;
+}
+
+.containerCard{
+  padding:20px 0px;
+  background-color: rgb(139, 110, 110);
 }
 </style>

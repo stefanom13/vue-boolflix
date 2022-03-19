@@ -12,10 +12,14 @@
       <p v-if="element.original_title" >{{element.original_title}}  </p>
       <p v-else> {{element.original_name}}  </p>
 
-      <img width="25px" v-if="element.origin_country" :src="`http://purecatamphetamine.github.io/country-flag-icons/3x2/${element.origin_country}.svg`">
+      <img width="25px" v-if="element.origin_country" :src="`http://purecatamphetamine.github.io/country-flag-icons/3x2/${element.origin_country.toString().toUpperCase()}.svg`">
       <img width="25px" v-else  :src="`http://purecatamphetamine.github.io/country-flag-icons/3x2/${element.original_language.toUpperCase()}.svg`">
 
-      <p>{{element.vote_average}}</p>
+      <!-- <p>{{element.vote_average}}</p> -->
+      <p class="icon"><i class="fa-star" width="10px"  height="10px" v-for="number in 5" :key="number" :class="starClass(element.vote_average, number)"> </i></p>
+      
+
+      
 
     </div>
 
@@ -25,6 +29,9 @@
 <script>
 // import getUnicodeFlagIcon from 'country-flag-icons/unicode'
 
+
+
+
 export default {
     props:{
         element: {
@@ -33,16 +40,15 @@ export default {
         }
     },
     methods:{
-        // getFlag:function(unicode) {
-        //   return getUnicodeFlagIcon(unicode)
-        // //   funzione flag non funzionante <span>{{ getFlag (element.original_language)}}</span> 
-        // },
+        starClass(element, number) {
+        return number <= Math.ceil(element / 2);
+        },
     }
 
 }
 </script>
 
 <style lang="scss" scoped>
-
+  
 </style>
 
