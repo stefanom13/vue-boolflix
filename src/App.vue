@@ -4,11 +4,13 @@
 
     <MyHeader/>
     <main class="containerCard">
+      <h1 class="categories">Film</h1>
+
       <div class="container CardFilm">
        <MyCard v-for="movie in movies" :key="movie.id" :element="movie"/>
       </div>
 
-      <h2>serietv</h2>
+      <h1 class="categories">serietv</h1>
 
       <div class="container CardFilm">
         <MyCard v-for="serie in series" :key="serie.id" :element="serie"/>
@@ -75,5 +77,10 @@ export default {
 .containerCard{
   padding:20px 0px;
   background-color: rgb(139, 110, 110);
+
+}
+
+.categories{
+  padding: 10px 0px;
 }
 </style>
