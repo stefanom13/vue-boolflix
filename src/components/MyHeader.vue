@@ -53,6 +53,7 @@ export default {
                 padding:10px;
                 border:1px solid red;
                 border-radius:50px;
+                font-weight: 700;
             }
 
             button{
