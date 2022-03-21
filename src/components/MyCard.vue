@@ -6,7 +6,7 @@
         <img v-else width="342px" height="513px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALgAAAERCAMAAAD/iZ1nAAAAOVBMVEXMzMzPz8+Ojo7S0tLAwMDJycmoqKizs7OcnJy2traTk5PGxsaVlZW5ubmwsLC/v7+goKCrq6uKiooKuQRWAAABu0lEQVR4nO3Wi46bMBCFYc8YG+O79/0ftjbd7SXaatWq3VjV/ykhChxFB2dAGAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeBaRv5P5dLWXjyLJ9+MzqvwO8dHXn9ezvTy0lBzGuduaJy2Pc+CGe8yk/Wal6NpKS2KSS0mONIsal0ybe+eedQ5J118gqclKuhVYsaeSGlebHrWJDzn6qM69uKZdhzTNeY2IhDCjTWMXCVGP+T2r+/C3/3HxLGtJ5yVqfbe5ih5O3aFSw9wheq0ZcTmI9GE0zQPe27BiOxQvKiXb1eh8K27PYPuw4S5uXBw2Xza2K68Dd+zJxa814yVKie8Ur2/F5Yo2blXcHOuu0lSu8O6K57u4rPPKp9Vjfs6h2qH4vNrqZbSG8WPxdhevucTrvnbP7O0IVY3TM9Qtihvj56XWgp/jfoov0pPrLnUpQ0wf96jImIdXsBkpK3nHnt17zoF8fRiZ77X9/rra64zfkdcHFvkW2Na845wbTMQfkNO3nVf21/Z7QgEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD+a18AJJcMday6gyoAAAAASUVORK5CYII=" alt="">
       </figure>
 
-      <section class="contCardInfo">
+      
          <div class="infocard"> 
           <h2 v-if="element.title" > {{  element.title }}</h2>
           <h2 v-else> {{ element.name }}</h2>
@@ -22,7 +22,7 @@
           <p class="overview">{{ element.overview }}</p>
           <!-- <span :class="star < starClass(element) ?  'star' : '' " v-for="element in 5" :key="element"> &#9733; </span> -->
       </div>
-      </section>
+      
      
 
     </div>
@@ -67,7 +67,7 @@ export default {
 }
 
 figure:hover {
-   opacity: 0.2;
+   opacity: 0.1;
 }
 
 
@@ -83,18 +83,18 @@ figure:hover {
     font-weight: 700;
   }
 }
-.infocard:hover{
-  display:block !important;
+// .infocard:hover{
+//   display:block !important;
   
-}
+// }
 
-.contCardInfo{
+.infocard{
   display: none;
 }
-// .contCardInfo:hover{
-//   display: block !important;
-//     // z-index: 99999;
-// }
+.card:hover .infocard{
+  display: block !important;
+    // z-index: 99999;
+}
 
 .overview{
   padding-top:10px;
