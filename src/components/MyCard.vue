@@ -84,17 +84,17 @@ figure:hover {
   }
 }
 .infocard:hover{
-  display:bl !important;
+  display:block !important;
   
 }
 
 .contCardInfo{
   display: none;
 }
-.contCardInfo:hover{
-  display: block !important;
-    z-index: 99999;
-}
+// .contCardInfo:hover{
+//   display: block !important;
+//     // z-index: 99999;
+// }
 
 .overview{
   padding-top:10px;
